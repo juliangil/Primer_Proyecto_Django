@@ -10,8 +10,10 @@ urlpatterns = [
     
     url(r'^hello/', 'mysite.views.hello'), 
     url(r'^$', 'mysite.views.hello'), 
-    url(r'^time/', 'mysite.views.current_datetime'),
-    
+    #url(r'^time/', 'mysite.views.current_datetime'),
+    #url(r'^another-time-page/', 'mysite.views.current_datetime'),
+    url(r'^time/plus/(\d{1,2})/','mysite.views.hours_ahead'), #Cambia el numero de la url: /time/plus/1/, /time/plus/2/ hasta /time/plus/99/
+
 	'''r: La r le dice a Python que la cadena es una "cadena de texto" - su contenido no debera interpretar barras invertidas
 
 		^ y $:
