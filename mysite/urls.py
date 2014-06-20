@@ -10,6 +10,8 @@ urlpatterns = [
     
     url(r'^hello/', 'mysite.views.hello'), 
     url(r'^$', 'mysite.views.hello'), 
+    url(r'^time/', 'mysite.views.current_datetime'),
+    
 	'''r: La r le dice a Python que la cadena es una "cadena de texto" - su contenido no debera interpretar barras invertidas
 
 		^ y $:
