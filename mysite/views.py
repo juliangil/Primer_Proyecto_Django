@@ -1,3 +1,4 @@
+from django.template import Template, Context
 from django.http import HttpResponse
 import datetime
 
@@ -5,10 +6,21 @@ def hello(request): #request: Solicitud por convencion y es una instancia de a c
     return HttpResponse("Hello world") #No hacemos nada con el request, pero siempre debe de llevar un parametro
 
 #FUNCION QUE RETORNA LA HORA DE NUESTRO SERVIDOR (CODIGO .PY)
+'''def current_datetime(request):
+    now = datetime.datetime.now()
+    t = Template("<html><body>It is now {{current_date}}.</body></html>")
+    html = t.render(Context({'current_date': now}))
+    return HttpResponse(html)
+'''
 def current_datetime(request):
     now = datetime.datetime.now()
-    html = "<html><body>It is now %s.</body></html>" % now
+    #Manera simple de usar Templates desde un archivo#
+    fp = open('/media/OS/Users/USUARIO/Mis documentos/JULIAN/ATHOM_HOUSE/DJANGO/Proyectos/mysite/mysite/mytemplate.html')
+    t = Template(fp.read())
+    fp.close()
+    html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
+
 
 def hours_ahead(request, offset):
     try:
