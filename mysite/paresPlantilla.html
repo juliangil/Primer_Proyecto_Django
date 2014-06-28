@@ -9,9 +9,9 @@
 	{% for i in listaNumeros %}
 
 		{% ifequal i.par 1 %}
-			<p>El numero: {{i.numero}} es PAR</p>
+			<p>El numero: <b>{{i.numero}}</b> es <b>PAR</b></p>
 		{% else %}
-			<p>El numero: {{i.numero}} es IMPAR</p>
+			<p>El numero: <b>{{i.numero}}</b> es <b>IMPAR</b></p>
 		{% endifequal %}
     	
 	{% endfor %}
