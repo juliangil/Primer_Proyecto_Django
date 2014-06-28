@@ -11,6 +11,9 @@ class Publisher(models.Model):
     def __str__(self):
         return "name: %s " % (self.name)
 
+    class Admin:
+        pass
+
 class Author(models.Model):
     salutation = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
@@ -20,6 +23,9 @@ class Author(models.Model):
 
     def __str__(self):
         return " first_name: %s last_name: %s "% (self.first_name, self.last_name)
+
+    class Admin:
+        pass
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
