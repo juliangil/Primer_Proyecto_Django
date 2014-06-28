@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+#from django.conf.urls.defaults import *
 
 urlpatterns = [
     # Examples:
@@ -7,6 +8,8 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     #url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^admin/', include('django.contrib.admin.urls')),
     
     url(r'^hello/', 'mysite.views.hello'), 
     url(r'^$', 'mysite.views.hello'), 
