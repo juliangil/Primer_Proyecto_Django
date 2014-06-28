@@ -1,5 +1,7 @@
-from django.template import Template, Context
-from django.http import HttpResponse
+#from django.template.loader import get_template #Carga de Plantillas
+#from django.template import Template, Context
+#from django.http import HttpResponse
+from django.shortcuts import render_to_response
 
 #print "Estas en numero.py"
 class Numero:
@@ -33,12 +35,19 @@ def imprimirLista2():
         print i.numero, i.par
     	print i
 
-def mostrarNoPares(request):
-    fp = open('/media/OS/Users/USUARIO/Mis documentos/JULIAN/ATHOM_HOUSE/DJANGO/Proyectos/mysite/mysite/paresPlantilla.html')
+'''def mostrarNoPares(request):
+    fp = open('/media/OS/Users/USUARIO/Mis documentos/JULIAN/ATHOM_HOUSE/DJANGO/Proyectos/mysite/mysite/templates/paresPlantilla.html')
     t = Template(fp.read())
     fp.close()
     html = t.render(Context({'listaNumeros': listaNumeros}))
-    return HttpResponse(html)
+    return HttpResponse(html)'''
+
+#Manera mas facil de hacer el response con render_to_response()
+#Para ello tuvimos que modificar el TEMPLATE_DIRS en setting.py
+#E importar: from django.shortcuts import render_to_response
+#No hay necesidad de importar emplate, Context, o HttpResponse
+def mostrarNoPares(request):
+    return render_to_response('paresPlantilla.html', {'listaNumeros': listaNumeros})
 
 par(numero)
 imprimirLista2()

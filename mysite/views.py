@@ -1,5 +1,7 @@
-from django.template import Template, Context
-from django.http import HttpResponse
+#from django.template.loader import get_template #Carga de Plantillas
+#from django.template import Template, Context
+#from django.http import HttpResponse
+from django.shortcuts import render_to_response
 import datetime
 print "Estas dentro de views.py"
 
@@ -13,14 +15,23 @@ def hello(request): #request: Solicitud por convencion y es una instancia de a c
     html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
 '''
-def current_datetime(request):
+'''def current_datetime(request):
     now = datetime.datetime.now()
     #Manera simple de usar Templates desde un archivo#
-    fp = open('/media/OS/Users/USUARIO/Mis documentos/JULIAN/ATHOM_HOUSE/DJANGO/Proyectos/mysite/mysite/mytemplate.html')
+    fp = open('mytemplate.html')
     t = Template(fp.read())
     fp.close()
     html = t.render(Context({'current_date': now}))
     return HttpResponse(html)
+'''
+
+#Manera mas facil de hacer el response con render_to_response()
+#Para ello tuvimos que modificar el TEMPLATE_DIRS en setting.py
+#E importar: from django.shortcuts import render_to_response
+#No hay necesidad de importar emplate, Context, o HttpResponse
+def current_datetime(request):
+    now = datetime.datetime.now()
+    return render_to_response('current_datetime.html', {'current_date': now})
 
 
 def hours_ahead(request, offset):

@@ -22,6 +22,13 @@ SECRET_KEY = '#m$q9rc_7v59rl1s=r=t9rty%7v!dduzvdo2)4l_7&5+mte3(='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TEMPLATE_DIRS = (
+    "/media/OS/Users/USUARIO/Mis documentos/JULIAN/ATHOM_HOUSE/DJANGO/Proyectos/mysite/mysite/templates",
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
+
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
