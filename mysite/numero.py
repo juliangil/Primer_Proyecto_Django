@@ -20,7 +20,7 @@ def par(numero):
         	num = Numero(i, 1)
         	listaNumeros.append(num)
         else:
-        	#Definimos el identificador como "0" para PAR
+        	#Definimos el identificador como "0" para IMPAR
             num = Numero(i, 0)
             listaNumeros.append(num)
 
