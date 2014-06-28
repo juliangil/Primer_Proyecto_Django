@@ -1,6 +1,7 @@
 from django.template import Template, Context
 from django.http import HttpResponse
 import datetime
+print "Estas dentro de views.py"
 
 def hello(request): #request: Solicitud por convencion y es una instancia de a clase django.http.HttpRequest
     return HttpResponse("Hello world") #No hacemos nada con el request, pero siempre debe de llevar un parametro
@@ -29,4 +30,4 @@ def hours_ahead(request, offset):
         raise Http404()
     dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
     html = "<html><body>In %s hour(s), it will be %s.</body></html>" % (offset, dt)
-    return HttpResponse(html)
+    return HttpResponse(html)   

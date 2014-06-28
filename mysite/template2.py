@@ -27,3 +27,5 @@ Outdoor Equipment. It's scheduled \nto ship on April 2, 2009.</p>\n\n\n
 	de Django: sólo escribe una plantilla, crea un objeto Template,
 	crea un Context, y llama al método render().
 '''
+
+
