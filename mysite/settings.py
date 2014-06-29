@@ -29,7 +29,9 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = ()
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    )
 
 TEMPLATE_DEBUG = True
 
@@ -39,13 +41,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    #'django.contrib.admin',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     #'django.contrib.messages',
     #'django.contrib.staticfiles',
-    'django.contrib.admin',
     'books',
     #'south',
 )
